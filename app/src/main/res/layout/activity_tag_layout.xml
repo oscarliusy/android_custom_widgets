@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.TagLayoutActivity"
+    android:padding="10dp"
+    android:orientation="vertical"
+    >
+    <com.spl.custom_widget_learn.customLayout.TagLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pink">
+        <TextView
+            android:text="1Hello World!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:background="@android:color/holo_green_dark"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:textSize="20sp"
+            android:text="2TAG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:textSize="20sp"
+            android:text="3World!Hello World!Hello World!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:textSize="20sp"
+            android:text="4Hello World!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:textSize="20sp"
+            android:text="5Hello World!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:textSize="20sp"
+            android:text="6Hello World!Hello World!Hello World!Hello World!Hello World!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+    </com.spl.custom_widget_learn.customLayout.TagLayout>
+
+    <com.spl.custom_widget_learn.customLayout.TagLayout
+        android:id="@+id/tag_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        />
+
+    <com.spl.custom_widget_learn.customWidget.TouchView
+        android:id="@+id/touch_view"
+        android:background="@android:color/holo_red_light"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.spl.custom_widget_learn">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Custom_Widget_Learn">
+        <activity android:name=".activities.SlideMenu2Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.SlideMenu1Activity">
+
+        </activity>
+        <activity android:name=".activities.TagLayoutActivity"></activity>
+        <activity android:name=".activities.VerticalOffsetLayoutActivity" />
+        <activity android:name=".activities.TestActivity" />
+        <activity android:name=".activities.LetterSideBarActivity" />
+        <activity android:name=".activities.RatingBarActivity" />
+        <activity android:name=".activities.ShapeAutoChangeActivity" />
+        <activity android:name=".activities.RoundBarActivity" />
+        <activity android:name=".activities.ViewPagerActivity" />
+        <activity android:name=".activities.ColorTrackTextActivity" />
+        <activity android:name=".activities.QQStepActivity" />
+        <activity android:name=".activities.MyTextViewActivity" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

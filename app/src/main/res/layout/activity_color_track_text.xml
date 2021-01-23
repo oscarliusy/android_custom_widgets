@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ColorTrackTextActivity"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+    <com.spl.custom_widget_learn.customWidget.ColorTrackTextView
+        android:id="@+id/color_track_text"
+        android:text="Hello World"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:originColor="@color/black"
+        app:changeColor="@android:color/holo_red_light"
+        />
+    <Button
+        android:text="左到右"
+        android:onClick="leftToRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="右到左"
+        android:onClick="rightToLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RatingBarActivity">
+    <com.spl.custom_widget_learn.customWidget.RatingBarView
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:gradeNumber="5"
+        app:starFocus="@drawable/star_selected"
+        app:starNormal="@drawable/star_normal"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:starSpacing="1dp"
+        />
+
+</LinearLayout>
