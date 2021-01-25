@@ -12,15 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Custom_Widget_Learn">
-        <activity android:name=".activities.VertivalDragActivity"></activity>
-        <activity android:name=".activities.SlideMenu2Activity">
+        <activity android:name=".activities.LockPatternActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.SlideMenu1Activity"></activity>
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".activities.VerticalDragActivity">
+
+        </activity>
+        <activity android:name=".activities.SlideMenu2Activity" />
+        <activity android:name=".activities.SlideMenu1Activity" />
         <activity android:name=".activities.TagLayoutActivity" />
         <activity android:name=".activities.VerticalOffsetLayoutActivity" />
         <activity android:name=".activities.TestActivity" />

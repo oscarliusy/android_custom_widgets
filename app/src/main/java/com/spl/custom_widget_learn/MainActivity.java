@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.spl.custom_widget_learn.activities.ColorTrackTextActivity;
 import com.spl.custom_widget_learn.activities.LetterSideBarActivity;
@@ -19,6 +17,7 @@ import com.spl.custom_widget_learn.activities.ShapeAutoChangeActivity;
 import com.spl.custom_widget_learn.activities.SlideMenu1Activity;
 import com.spl.custom_widget_learn.activities.SlideMenu2Activity;
 import com.spl.custom_widget_learn.activities.TagLayoutActivity;
+import com.spl.custom_widget_learn.activities.VerticalDragActivity;
 import com.spl.custom_widget_learn.activities.ViewPagerActivity;
 import com.spl.custom_widget_learn.customLayout.VerticalOffsetLayout;
 
@@ -28,7 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   private Button btn_main_mtv,btn_main_qq,btn_main_color_text,
       btn_main_view_pager,btn_main_round_bar,btn_main_shape_change,
       btn_main_rating_bar,btn_main_letter_sidebar,btn_main_offset_layout,
-      btn_main_tagLayout,btn_main_slideMenu1,btn_main_slideMenu2;
+      btn_main_tagLayout,btn_main_slideMenu1,btn_main_slideMenu2,
+      btn_main_vertical_drag,btn_main_next;
 
 
 
@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     btn_main_tagLayout = findViewById(R.id.btn_main_tagLayout);
     btn_main_slideMenu1 = findViewById(R.id.btn_main_slideMenu1);
     btn_main_slideMenu2 = findViewById(R.id.btn_main_slideMenu2);
+    btn_main_vertical_drag = findViewById(R.id.btn_main_vertical_drag);
+    btn_main_next = findViewById(R.id.btn_main_next);
 
     btn_main_mtv.setOnClickListener(this);
     btn_main_qq.setOnClickListener(this);
@@ -66,6 +68,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     btn_main_tagLayout.setOnClickListener(this);
     btn_main_slideMenu1.setOnClickListener(this);
     btn_main_slideMenu2.setOnClickListener(this);
+    btn_main_vertical_drag.setOnClickListener(this);
+    btn_main_next.setOnClickListener(this);
 
   }
 
@@ -119,6 +123,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         break;
       case R.id.btn_main_slideMenu2:
         intent = new Intent(MainActivity.this, SlideMenu2Activity.class);
+        startActivity(intent);
+        break;
+      case R.id.btn_main_vertical_drag:
+        intent = new Intent(MainActivity.this, VerticalDragActivity.class);
+        startActivity(intent);
+        break;
+      case R.id.btn_main_next:
+        intent = new Intent(MainActivity.this, MainActivity2.class);
         startActivity(intent);
         break;
       default:

@@ -67,6 +67,16 @@
         android:text="仿QQ6.0侧滑菜单"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_main_vertical_drag"
+        android:text="垂直抽屉"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_main_next"
+        android:text="下一页"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 
