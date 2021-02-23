@@ -3,6 +3,7 @@ package com.spl.custom_widget_learn;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ import com.spl.custom_widget_learn.activities.TagLayoutActivity;
 import com.spl.custom_widget_learn.activities.VerticalDragActivity;
 import com.spl.custom_widget_learn.activities.ViewPagerActivity;
 import com.spl.custom_widget_learn.customLayout.VerticalOffsetLayout;
+import com.spl.custom_widget_learn.utils.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -37,7 +39,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    //设置状态栏
+    setStatusBar();
     initView();
+  }
+
+  private void setStatusBar() {
+    //1.设置顶部状态栏颜色
+    //StatusBarUtil.setStatusBarColor(this, Color.RED);
+
+    //2.设置页面全屏
+    StatusBarUtil.setActivityTranslucent(this);
+    //QQ效果，1.不断监听ScrollView的滚动，判断当前滚动的位置跟头部ImageView比较，计算背景透明度
+    //2.自定义behavior
+
+
+
+
   }
 
   private void initView() {

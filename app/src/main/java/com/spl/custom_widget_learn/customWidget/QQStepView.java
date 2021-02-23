@@ -28,18 +28,18 @@ public class QQStepView extends View {
   private int mBorderWidth = 20;//20px
   private int mStepTextSize;
   private int mStepTextColor = Color.RED;
-  private Paint mOutPaint,mInnerPaint,mTextPaint;
+  private Paint mOutPaint, mInnerPaint, mTextPaint;
 
   //最高步数，当前部署
   private int mStepMax = 0;
   private int mCurrentStep = 0;
 
   public QQStepView(Context context) {
-    this(context,null);
+    this(context, null);
   }
 
   public QQStepView(Context context, @Nullable AttributeSet attrs) {
-    this(context, attrs,0);
+    this(context, attrs, 0);
   }
 
   public QQStepView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -49,11 +49,11 @@ public class QQStepView extends View {
 //    3.在布局中使用
 //    4.在自定义View中获取自定义属性
     TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.QQStepView);
-    mOuterColor = array.getColor(R.styleable.QQStepView_outerColor,mOuterColor);
-    mInnerColor = array.getColor(R.styleable.QQStepView_innerColor,mInnerColor);
-    mStepTextColor = array.getColor(R.styleable.QQStepView_stepTextColor,mStepTextColor);
-    mBorderWidth = (int) array.getDimension(R.styleable.QQStepView_borderWidth,mBorderWidth);
-    mStepTextSize = array.getDimensionPixelSize(R.styleable.QQStepView_stepTextSize,mStepTextSize);
+    mOuterColor = array.getColor(R.styleable.QQStepView_outerColor, mOuterColor);
+    mInnerColor = array.getColor(R.styleable.QQStepView_innerColor, mInnerColor);
+    mStepTextColor = array.getColor(R.styleable.QQStepView_stepTextColor, mStepTextColor);
+    mBorderWidth = (int) array.getDimension(R.styleable.QQStepView_borderWidth, mBorderWidth);
+    mStepTextSize = array.getDimensionPixelSize(R.styleable.QQStepView_stepTextSize, mStepTextSize);
     array.recycle();
 
     //外层圆弧画笔
@@ -94,7 +94,8 @@ public class QQStepView extends View {
     int width = MeasureSpec.getSize(widthMeasureSpec);
     int height = MeasureSpec.getSize(heightMeasureSpec);
 
-    setMeasuredDimension(width>height?height:width,width>height?height:width);
+    //设置view的宽高，在onDraw中可以通过getWidth(),getHeight()获取
+    setMeasuredDimension(width > height ? height : width, width > height ? height : width);
   }
 
   //    6.画外圆弧，内圆弧，文字
@@ -103,35 +104,35 @@ public class QQStepView extends View {
     super.onDraw(canvas);
 
     //6.1 画外圆弧  思考：边缘没有显示完整， 描边有宽度mBorderWidth
-    int center = getWidth()/2;
-    int radius = center - mBorderWidth/2;
-    RectF rectF = new RectF(mBorderWidth/2, mBorderWidth/2, center+radius, center+radius);
-    canvas.drawArc(rectF,135,270,false,mOutPaint);
+    int center = getWidth() / 2;
+    int radius = center - mBorderWidth / 2;
+    RectF rectF = new RectF(mBorderWidth / 2, mBorderWidth / 2, center + radius, center + radius);
+    canvas.drawArc(rectF, 135, 270, false, mOutPaint);
 
     //6.2 画内圆弧 不能写死，用户设置百分比
-    if(mStepMax == 0)return;
-    float sweepAngle = (float)270*mCurrentStep/mStepMax;
-    canvas.drawArc(rectF,135,sweepAngle,false,mInnerPaint);
+    if (mStepMax == 0) return;
+    float sweepAngle = (float) 270 * mCurrentStep / mStepMax;
+    canvas.drawArc(rectF, 135, sweepAngle, false, mInnerPaint);
 
     //6.3 画文字
     String stepText = mCurrentStep + "";
     Rect textBounds = new Rect();
-    mTextPaint.getTextBounds(stepText,0,stepText.length(),textBounds);
+    mTextPaint.getTextBounds(stepText, 0, stepText.length(), textBounds);
     //x方向起点
-    int dx = getWidth()/2 - textBounds.width()/2;
+    int dx = getWidth() / 2 - textBounds.width() / 2;
     //基线
     Paint.FontMetricsInt fontMetricsInt = mTextPaint.getFontMetricsInt();
-    int dy = (fontMetricsInt.bottom - fontMetricsInt.top)/2 - fontMetricsInt.bottom;
-    int baseLine = getHeight()/2 + dy;
-    canvas.drawText(stepText,dx,baseLine,mTextPaint);
+    int dy = (fontMetricsInt.bottom - fontMetricsInt.top) / 2 - fontMetricsInt.bottom;
+    int baseLine = getHeight() / 2 + dy;
+    canvas.drawText(stepText, dx, baseLine, mTextPaint);
   }
 
   //    7.其他处理,加入动画
-  public synchronized void setStepMax(int stepMax){
+  public synchronized void setStepMax(int stepMax) {
     this.mStepMax = stepMax;
   }
 
-  public synchronized void setCurrentStep(int currentStep){
+  public synchronized void setCurrentStep(int currentStep) {
     this.mCurrentStep = currentStep;
     //不断绘制 调用onDraw
     invalidate();

@@ -4,10 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    tools:context=".MainActivity2"
+    android:orientation="vertical">
     <Button
         android:id="@+id/btn_main2_lockpattern"
         android:text="九宫格"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_main2_immersive"
+        android:text="沉浸式状态栏"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
