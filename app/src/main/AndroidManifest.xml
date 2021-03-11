@@ -12,19 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity
-            android:name=".md_activity.ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.Custom_Widget_Learn.NoActionBar">
+        <activity android:name=".animation.FlowerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".md_activity.MyBehaviorActivity">
+        <activity android:name=".animation.ListDataScreenActivity">
 
         </activity>
+        <activity android:name=".animation.AutoShape58Activity"></activity>
+        <activity
+            android:name=".md_activity.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.Custom_Widget_Learn.NoActionBar" />
+        <activity android:name=".md_activity.MyBehaviorActivity" />
         <activity android:name=".md_activity.CoordinateLayoutActivity" />
         <activity android:name=".activities.BehaviorActivity" />
         <activity android:name=".activities.ImmersiveStatusBarActivity" />

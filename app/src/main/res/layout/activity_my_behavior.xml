@@ -9,8 +9,15 @@
     android:id="@+id/behavior_demo_coordinatorLayout">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:theme="@style/AppTheme.AppBarOverlay">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="?attr/colorPrimary"
+            android:scaleType="fitXY"
+            android:src="@mipmap/test"
+            app:layout_scrollFlags="scroll|enterAlways" />
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             app:title="我来组成头部"

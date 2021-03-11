@@ -1,12 +1,16 @@
 package com.spl.custom_widget_learn;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Binder;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.spl.custom_widget_learn.activities.ColorTrackTextActivity;
 import com.spl.custom_widget_learn.activities.LetterSideBarActivity;
@@ -23,6 +27,9 @@ import com.spl.custom_widget_learn.activities.ViewPagerActivity;
 import com.spl.custom_widget_learn.customLayout.VerticalOffsetLayout;
 import com.spl.custom_widget_learn.utils.StatusBarUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
@@ -31,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       btn_main_rating_bar,btn_main_letter_sidebar,btn_main_offset_layout,
       btn_main_tagLayout,btn_main_slideMenu1,btn_main_slideMenu2,
       btn_main_vertical_drag,btn_main_next;
+
+  private ArrayList a;
 
 
 
@@ -42,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //设置状态栏
     setStatusBar();
     initView();
+
   }
 
   private void setStatusBar() {

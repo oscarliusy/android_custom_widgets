@@ -12,6 +12,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.spl.custom_widget_learn.R;
 import com.spl.custom_widget_learn.adapters.MyBehaviorAdapter;
+import com.spl.custom_widget_learn.utils.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ public class MyBehaviorActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    StatusBarUtil.setActivityTranslucent(this);
     setContentView(R.layout.activity_my_behavior);
 
     initData();

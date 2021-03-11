@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
+import android.graphics.drawable.shapes.Shape;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -20,14 +21,18 @@ import androidx.annotation.Nullable;
  */
 public class ShapeChangeView extends View {
   private Paint mRoundPaint,mSquarePaint,mTrianglePaint;
-  private int mRoundColor = Color.BLUE;
-  private int mSquareColor = Color.RED;
-  private int mTriangleColor = Color.GREEN;
+  private String mRoundColor = "#aa738ffe";
+  private String mSquareColor = "#aae84e40";
+  private String mTriangleColor = "#aa72d572";
   private mShape currentShape = mShape.ROUND;
   public enum mShape{
     ROUND,
     SQUARE,
     TRIANGLE
+  }
+
+  public mShape getCurrentShape(){
+    return currentShape;
   }
 
   public ShapeChangeView(Context context) {
@@ -45,9 +50,9 @@ public class ShapeChangeView extends View {
      * 2.定义画笔
      * 3.根据enum.shape绘制不同形状
      */
-    mRoundPaint = createPaint(mRoundColor);
-    mSquarePaint = createPaint(mSquareColor);
-    mTrianglePaint = createPaint(mTriangleColor);
+    mRoundPaint = createPaint(Color.parseColor(mRoundColor));
+    mSquarePaint = createPaint(Color.parseColor(mSquareColor));
+    mTrianglePaint = createPaint(Color.parseColor(mTriangleColor));
   }
 
   private Paint createPaint(int color){
