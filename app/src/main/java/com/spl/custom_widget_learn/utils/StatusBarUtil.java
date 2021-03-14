@@ -1,9 +1,11 @@
 package com.spl.custom_widget_learn.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -71,6 +73,18 @@ public class StatusBarUtil {
     return resources.getDimensionPixelOffset(statusBarHeightId);
   }
 
+  public static int getStatusBarHeight(Context context){
+    int resId = context.getResources().getIdentifier("status_bar_height","dimen","android");
+    if(resId>0){
+      //根据资源ID获取响应的尺寸值
+      return context.getResources().getDimensionPixelSize(resId);
+    }
+    return dip2px(25,context);
+  }
+
+  private static int dip2px(int dip,Context context) {
+    return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dip, context.getResources().getDisplayMetrics());
+  }
   /**
    * 设置页面全屏
    * @param activity
